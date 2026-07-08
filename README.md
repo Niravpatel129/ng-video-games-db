@@ -1,27 +1,87 @@
-# NgVideoGameDb
+# Angular Video Games DB
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.2.
+An Angular 11 video game discovery app that lists games, supports search routes, and opens detail pages for individual games.
 
-## Development server
+The app uses a shared HTTP service to load game lists, game details, screenshots, and trailers from an API configured through the Angular environment files.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Features
 
-## Code scaffolding
+- Home page with game listing
+- Search route for filtering games by query
+- Game detail route by ID
+- Shared HTTP service for API calls
+- Combined detail, screenshot, and trailer requests with RxJS `forkJoin`
+- Angular Material/CDK dependencies available for UI work
+- Gauge dependency available for rating or score visualization
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Tech stack
 
-## Build
+- Angular 11
+- TypeScript
+- Angular Router
+- Angular Material / CDK
+- RxJS
+- Angular Gauge
+- Karma / Jasmine
+- Protractor
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Getting started
 
-## Running unit tests
+Install dependencies:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```bash
+npm install
+```
 
-## Running end-to-end tests
+Run the local development server:
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+```bash
+npm start
+```
 
-## Further help
+Open the app locally:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```text
+http://localhost:4200
+```
+
+## Available scripts
+
+```bash
+npm start       # Run Angular dev server
+npm run build   # Build the app
+npm test        # Run unit tests
+npm run lint    # Run linting
+npm run e2e     # Run end-to-end tests
+```
+
+## Routes
+
+```text
+/                    # Home game listing
+/search/:game-search # Search-filtered game listing
+/details/:id         # Game detail page
+```
+
+## Project structure
+
+```text
+src/app/components/      # Home, details, search, and UI components
+src/app/services/        # API service layer
+src/app/models/          # API response and game models
+src/environments/        # API base URL and environment config
+```
+
+## Configuration
+
+The API base URL is read from the Angular environment config:
+
+```ts
+environment.BASE_URL
+```
+
+Make sure the environment file points to the correct games API before running or deploying the app.
+
+## Status
+
+This is a learning/demo Angular project for game discovery UI patterns, routing, and API integration.
